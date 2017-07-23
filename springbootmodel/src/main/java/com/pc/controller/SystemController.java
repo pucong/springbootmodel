@@ -17,7 +17,7 @@ public class SystemController {
     public String home(HttpServletRequest request, HttpServletResponse response){
         return "welcome";
     }
-    @RequestMapping("/")
+    @RequestMapping("/index2")
     public String index(HttpServletRequest request, HttpServletResponse response){
         return "welcome index";
     }
