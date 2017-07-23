@@ -8,41 +8,6 @@
 <div id="test"></div>
 <script src="[@common.ctx /]/jquery/jquery-2.2.3.min.js" type="text/javascript"></script>
 <script src="[@common.ctx /]/jsResources/artTemplate/artTemplate.js" type="text/javascript"></script>
-<script type="application/javascript">
-    var data={
-        change:{
-            one:"切换"
-        }
-    }
-    function loadXMLDoc(){
-        var xmlhttp;
-        if (window.XMLHttpRequest){
-            xmlhttp=new XMLHttpRequest();
-        }else{
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange=function(){
-            if(xmlhttp.readyState==4&&xmlhttp.status==200){
-                var testObj=document.getElementById("test");
-                var source =xmlhttp.responseText;
-                var render = template.compile(source);
-                var html = render(data);
-                testObj.innerHTML=html;
-            }
-        }
-        xmlhttp.open("GET","/webPage/test/htmlB.html",true);
-        xmlhttp.send();
-    }
 
-    function test() {
-//        $("#test").load("webPage/test/htmlB.html");
-        var htmlobj=$.ajax({url:"/webPage/test/htmlB.html",async:false});
-        console.log();
-        var source =htmlobj.responseText;
-        var render = template.compile(source);
-        var html = render(data);
-        $("#test").html(html);
-    }
-</script>
 </body>
 </html>
