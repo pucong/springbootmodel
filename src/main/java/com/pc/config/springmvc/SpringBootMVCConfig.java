@@ -1,4 +1,4 @@
-package com.pc.config;
+package com.pc.config.springmvc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
