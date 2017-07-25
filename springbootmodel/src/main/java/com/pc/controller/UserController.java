@@ -23,14 +23,6 @@ public class UserController {
 
     }
 
-
-    @PreAuthorize("hasRole('user')")
-    @RequestMapping(value = "/admin",method = RequestMethod.GET)
-    public String toAdmin(){
-
-        return "helloAdmin";
-    }
-
     @RequestMapping("/hello")
     public String hello() {
 
