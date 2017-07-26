@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: springbootmodel
-Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: PC
-Implementation-Vendor-Id: com.pc
-Created-By: IntelliJ IDEA
-Build-Jdk: 1.8.0_20
-Main-Class: ${start-class}
-
