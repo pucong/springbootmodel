@@ -1,11 +1,11 @@
 package com.pc.service;
 
-import com.pc.model.User;
+import java.util.Map;
 
 /**
  * Created by PC on 2017/7/24.
  */
 public interface UserService {
 
-    public User findUserByid(int id);
+    public Map<String,Object> findUserByid(int id);
 }

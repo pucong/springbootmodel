@@ -1,48 +1,26 @@
 package com.pc.controller;
 
 import com.pc.service.UserService;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * Created by PC on 2017/7/24.
  */
-@Controller
+@RestController
+@RequestMapping("/user")
 public class UserController {
 
-    @Resource
+    @Autowired
     private UserService userService;
 
-    @RequestMapping("/home")
-    public String home() {
-        return "home";
-
+    @RequestMapping("/getuser")
+    public Map<String,Object> home() {
+        Map<String,Object> map=userService.findUserByid(11);
+        return map;
     }
 
-    @RequestMapping("/hello")
-    public String hello() {
-
-        return "hello";
-
-    }
-
-    @RequestMapping("/login")
-    public String login(){
-        return "login";
-    }
-
-    @RequestMapping("/")
-    public String root() {
-        return "index";
-
-    }
-
-    @RequestMapping("/403")
-    public String error(){
-        return "403";
-    }
 }
