@@ -12,6 +12,7 @@ import org.springframework.security.web.access.intercept.FilterSecurityIntercept
 
 /**
  * Created by PC on 2017/7/27.
+ * security全局配置
  */
 @Configuration
 @EnableWebSecurity
@@ -38,8 +39,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated() //任何请求,登录后可以访问
                 .and()
                 .formLogin()
-                .loginPage("/login")    //登录页面
-                .failureUrl("/login?error") //登录失败页面
+                .loginPage("/index")    //登录页面
+                .failureUrl("/index?error") //登录失败页面
                 .permitAll() //登录页面用户任意访问
                 .and()
                 .logout().permitAll(); //注销行为任意访问
