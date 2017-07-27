@@ -1,5 +1,6 @@
 package com.pc.dao;
 
+import com.pc.model.SysUser;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.Map;
@@ -9,5 +10,8 @@ import java.util.Map;
  */
 @Mapper
 public interface UserDao {
+
     Map<String,Object> getUserById(int id);
+
+    SysUser findByUserName(String id);
 }

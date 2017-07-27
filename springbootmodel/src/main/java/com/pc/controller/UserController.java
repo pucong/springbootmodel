@@ -11,7 +11,6 @@ import java.util.Map;
  * Created by PC on 2017/7/24.
  */
 @RestController
-@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -22,5 +21,14 @@ public class UserController {
         Map<String,Object> map=userService.findUserByid(11);
         return map;
     }
-
+    @RequestMapping("/getRole")
+    public Map<String,Object> getRole() {
+        Map<String,Object> map=userService.findUserByid(11);
+        return map;
+    }
+    @RequestMapping("/getInfo")
+    public Map<String,Object> getInfo() {
+        Map<String,Object> map=userService.findUserByid(11);
+        return map;
+    }
 }
