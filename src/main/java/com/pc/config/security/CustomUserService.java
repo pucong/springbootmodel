@@ -18,7 +18,6 @@ import java.util.List;
 
 /**
  * Created by PC on 2017/7/27.
- * 用户登录接口实现
  */
 @Service
 public class CustomUserService implements UserDetailsService {  //自定义UserDetailsService 接口

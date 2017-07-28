@@ -13,7 +13,6 @@ import java.util.Iterator;
 
 /**
  * Created by PC on 2017/7/27.
- * 判断用户是否拥有该资源的权限，有则放行，没有则抛错
  */
 @Service
 public class MyAccessDecisionManager implements AccessDecisionManager {

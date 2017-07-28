@@ -13,8 +13,6 @@ import java.io.IOException;
 
 /**
  * Created by PC on 2017/7/27.
- * 资源管理器，拦截请求，截取请求并返回
- * 下一步到达MyInvocationSecurityMetadataSourceService
  */
 @Service
 public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {
