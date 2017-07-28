@@ -15,6 +15,7 @@ import java.util.*;
 
 /**
  * Created by PC on 2017/7/27.
+ * 判断请求是否在控制权限中，在则返回给MyAccessDecisionManager处理②
  */
 @Service
 public class MyInvocationSecurityMetadataSourceService implements FilterInvocationSecurityMetadataSource {

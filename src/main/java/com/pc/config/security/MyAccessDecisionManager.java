@@ -13,6 +13,7 @@ import java.util.Iterator;
 
 /**
  * Created by PC on 2017/7/27.
+ * 判断用户是否有该权限③
  */
 @Service
 public class MyAccessDecisionManager implements AccessDecisionManager {

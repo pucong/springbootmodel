@@ -12,6 +12,7 @@ import org.springframework.security.web.access.intercept.FilterSecurityIntercept
 
 /**
  * Created by PC on 2017/7/27.
+ * 全局security配置
  */
 @Configuration
 @EnableWebSecurity

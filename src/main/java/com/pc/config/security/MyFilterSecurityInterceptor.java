@@ -13,6 +13,7 @@ import java.io.IOException;
 
 /**
  * Created by PC on 2017/7/27.
+ * security拦截器接口①
  */
 @Service
 public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {
