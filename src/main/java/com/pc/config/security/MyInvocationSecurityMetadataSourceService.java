@@ -51,7 +51,7 @@ public class MyInvocationSecurityMetadataSourceService implements FilterInvocati
         }
         //object 中包含用户请求的request 信息
         HttpServletRequest request = ((FilterInvocation) object).getHttpRequest();
-        System.out.println("-------"+((FilterInvocation) object).getHttpRequest()); //输出访问地址
+        System.out.println("-------"+request.getRequestURI()); //输出访问地址
         AntPathRequestMatcher matcher;
         String resUrl;
         for(Iterator<String> iter = map.keySet().iterator(); iter.hasNext(); ) {
