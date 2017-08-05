@@ -25,16 +25,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private MyFilterSecurityInterceptor myFilterSecurityInterceptor;    //自定义请求拦截器
 
-    //自定义用户服务
-    @Bean
-    UserDetailsService customUserService(){ //注册UserDetailsService 的bean
-        return new CustomUserService();
-    }
+    @Autowired
+    private CustomUserService customUserService;//自定义用户服务
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         //将登录成功后的用户服务放给自定义的类处理
-        auth.userDetailsService(customUserService());
+        auth.userDetailsService(customUserService);
     }
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -51,6 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .failureUrl("/index.html") //登录失败页面
                     .usernameParameter("user-name") //表单提交name的参数设置
                     .passwordParameter("pwd")   //表单提交password参数设置
+                    .loginProcessingUrl("/loginValid")  //登录的请求设置
                     .permitAll() //登录页面用户任意访问
                 .and()
                 .logout()
