@@ -10,6 +10,9 @@ import java.util.List;
  */
 @Mapper
 public interface  PermissionDao {
+
     public List<Permission> findAll();
+
     public List<Permission> findByAdminUserId(int userId);
+
 }

@@ -15,6 +15,7 @@ public class SystemController {
     public String index(Model model){
         return "欢迎来到HOME页面,您拥有 ROLE_HOME 权限";
     }
+
     @RequestMapping("/admin")
     @ResponseBody
     public String hello(){

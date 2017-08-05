@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * Created by PC on 2017/7/27.
+ * 通过用户名，获取用户的权限和其它信息
  */
 @Service
 public class CustomUserService implements UserDetailsService {  //自定义UserDetailsService 接口

@@ -18,17 +18,17 @@ public class UserController {
 
     @RequestMapping("/getuser")
     public Map<String,Object> home() {
-        Map<String,Object> map=userService.findUserByid(11);
+        Map<String,Object> map=userService.findUserByid(1);
         return map;
     }
     @RequestMapping("/getRole")
     public Map<String,Object> getRole() {
-        Map<String,Object> map=userService.findUserByid(11);
+        Map<String,Object> map=userService.findUserByid(1);
         return map;
     }
     @RequestMapping("/getInfo")
     public Map<String,Object> getInfo() {
-        Map<String,Object> map=userService.findUserByid(11);
+        Map<String,Object> map=userService.findUserByid(1);
         return map;
     }
 }

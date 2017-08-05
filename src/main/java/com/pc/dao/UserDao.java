@@ -13,5 +13,5 @@ public interface UserDao {
 
     Map<String,Object> getUserById(int id);
 
-    SysUser findByUserName(String id);
+    SysUser findByUserName(String name);
 }

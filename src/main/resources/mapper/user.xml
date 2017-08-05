@@ -4,7 +4,9 @@
     <select id="getUserById" resultType="java.util.HashMap">
         select * from SYS_USER  where id = #{id}
     </select>
+
     <select id="findByUserName" resultType="com.pc.model.SysUser">
         select * from SYS_USER  where username = #{name}
     </select>
+
 </mapper>

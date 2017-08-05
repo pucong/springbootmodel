@@ -8,6 +8,11 @@ public class SysUser {
     private String username;
     private String password;
 
+    public SysUser(SysUser user){
+        this.username = user.getUsername();
+        this.password = user.getPassword();
+        this.id = user.getId();
+    }
     public int getId() {
         return id;
     }
