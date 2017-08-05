@@ -24,7 +24,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private MyAuthenticationProvider myAuthenticationProvider;  //自定义登录验证
     @Autowired
     private MyFilterSecurityInterceptor myFilterSecurityInterceptor;    //自定义请求拦截器
-
     @Autowired
     private CustomUserService customUserService;//自定义用户服务
 
@@ -41,12 +40,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/jquery/**","/loginValid","/j_spring_security_check").permitAll()
                 .anyRequest().authenticated() //任何请求,登录后可以访问
                 .and()
                 .formLogin()
                     .loginPage("/login.html")    //登录页面
                     .failureUrl("/index.html") //登录失败页面
-                    .usernameParameter("user-name") //表单提交name的参数设置
+                    .usernameParameter("userName") //表单提交name的参数设置
                     .passwordParameter("pwd")   //表单提交password参数设置
                     .loginProcessingUrl("/loginValid")  //登录的请求设置
                     .permitAll() //登录页面用户任意访问

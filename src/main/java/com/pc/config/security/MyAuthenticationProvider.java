@@ -23,6 +23,7 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
 
     /**
      * 自定义验证方式
+     * 默认请求为：/j_spring_security_check
      * 自定义表单参数的name属性，默认是 j_username 和 j_password
      */
     @Override
