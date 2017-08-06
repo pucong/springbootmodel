@@ -18,6 +18,7 @@ import java.io.IOException;
 @Service
 public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {
 
+    //配置文件注入
     @Autowired
     private FilterInvocationSecurityMetadataSource securityMetadataSource;
 
@@ -67,4 +68,5 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
     public SecurityMetadataSource obtainSecurityMetadataSource() {
         return this.securityMetadataSource;
     }
+
 }

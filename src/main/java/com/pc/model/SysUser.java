@@ -4,7 +4,7 @@ package com.pc.model;
  * Created by PC on 2017/7/27.
  */
 public class SysUser {
-    private int id;
+    private Integer id;
     private String username;
     private String password;
 
@@ -12,6 +12,11 @@ public class SysUser {
         this.username = user.getUsername();
         this.password = user.getPassword();
         this.id = user.getId();
+    }
+    public SysUser(Integer id,String username,String password){
+        this.username = username;
+        this.password = password;
+        this.id = id;
     }
     public int getId() {
         return id;

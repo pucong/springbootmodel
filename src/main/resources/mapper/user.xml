@@ -5,7 +5,7 @@
         select * from SYS_USER  where id = #{id}
     </select>
 
-    <select id="findByUserName" resultType="com.pc.model.SysUser">
+    <select id="findByUserName" resultType="com.pc.model.SysUser" parameterType="java.lang.String">
         select * from SYS_USER  where username = #{name}
     </select>
 

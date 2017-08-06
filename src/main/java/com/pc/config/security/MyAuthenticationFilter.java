@@ -26,8 +26,7 @@
 // * @Email: mmm333zzz520@163.com
 // * @version 1.0v
 // */
-//public class MyAuthenticationFilter extends
-//        UsernamePasswordAuthenticationFilter {
+//public class MyAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 //    private static final String USERNAME = "username";
 //    private static final String PASSWORD = "password";
 //    /**

@@ -7,31 +7,18 @@
 </head>
 <body>
 <form action="/loginValid" method="post" >
-    <input type="text" name="user-name">
-    <input type="password" name="pwd"/>
-    <button type="button" onclick="postTwo()">Submit</button>
+    <input type="text" name="username">
+    <input type="password" name="password"/>
+    <button type="submit">Submit</button>
 </form>
-<form action="/j_spring_security_check" method="post" >
-    <input type="text" name="user-name">
-    <input type="password" name="pwd"/>
-    <button type="button" onclick="postOne()">Submit</button>
-</form>
+
 <script type="text/javascript">
 function postOne() {
     var params={
-        userName:'admin',
-        pwd:'admin'
+        username:'admin',
+        password:'admin'
     };
     $.post('/loginValid',params,function (data) {
-        console.log(data)
-    })
-}
-function postTwo() {
-    var params={
-        userName:'admin',
-        pwd:'admin'
-    };
-    $.post('/j_spring_security_check',params,function (data) {
         console.log(data)
     })
 }
