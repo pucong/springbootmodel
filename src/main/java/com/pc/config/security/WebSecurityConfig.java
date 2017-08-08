@@ -31,9 +31,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         //将登录成功后的用户服务放给自定义的类处理
         auth.userDetailsService(customUserService);
-    }
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         //将登录验证过程交给自定义验证工具
         auth.authenticationProvider(myAuthenticationProvider);
     }

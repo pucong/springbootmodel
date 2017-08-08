@@ -4,7 +4,9 @@ import com.pc.config.security.CustomUserService;
 import com.pc.model.SysUser;
 import com.pc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,16 +26,17 @@ public class UserController {
     @Autowired
     private CustomUserService customUserService;
 
-    @RequestMapping(value = "/login2")
+    @RequestMapping("/loginValid")
     @ResponseBody
     public Object login(@AuthenticationPrincipal SysUser loginedUser, @RequestParam(name = "logout", required = false) String logout) {
         if (logout != null) {
-            return null;
+            return "退出登录";
         }
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (loginedUser != null) {
             return customUserService.loadUserByUsername(loginedUser.getUsername());
         }
-        return null;
+        return "登录成功";
     }
 
     @RequestMapping("/getuser")
