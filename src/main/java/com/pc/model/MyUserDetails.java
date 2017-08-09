@@ -1,7 +1,5 @@
-package com.pc.dao;
+package com.pc.model;
 
-import com.pc.model.SysRole;
-import com.pc.model.SysUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,7 +15,7 @@ public class MyUserDetails extends SysUser implements UserDetails {
 
     private List<SysRole> roles;    //用户拥有的角色
 
-    public MyUserDetails(SysUser user, List<SysRole> roles){
+    public MyUserDetails(SysUser user,List<GrantedAuthority> grantedAuthoritiesUrl, List<SysRole> roles){
         super(user);
         this.roles = roles;
     }
@@ -29,7 +27,7 @@ public class MyUserDetails extends SysUser implements UserDetails {
         }
         StringBuilder commaBuilder = new StringBuilder();
         for(SysRole role : roles){
-            commaBuilder.append(role.getRole()).append(",");
+            commaBuilder.append(role.getName()).append(",");
         }
         String authorities = commaBuilder.substring(0,commaBuilder.length()-1);
         return AuthorityUtils.commaSeparatedStringToAuthorityList(authorities);

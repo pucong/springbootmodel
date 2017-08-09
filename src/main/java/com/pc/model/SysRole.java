@@ -7,24 +7,21 @@ public class SysRole {
 
     private Long id;
 
-    private String role;
-    private Long userId;
+    private String name;
+
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
-    public String getRole() {
-        return role;
+
+    public String getName() {
+        return name;
     }
-    public void setRole(String role) {
-        this.role = role;
-    }
-    public Long getUserId() {
-        return userId;
-    }
-    public void setUserId(Long userId) {
-        this.userId = userId;
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

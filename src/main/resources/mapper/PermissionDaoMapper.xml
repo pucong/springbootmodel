@@ -15,4 +15,9 @@
         LEFT JOIN Sys_permission p on p.id =spr.permission_id
         where u.id=#{userId}
     </select>
+    <select id="findRoleByAdminUserId"  resultType="com.pc.model.SysRole">
+
+        SELECT id,name from sys_role where id=#{userId}  ;
+    </select>
+
 </mapper>

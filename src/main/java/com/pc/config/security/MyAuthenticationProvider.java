@@ -1,6 +1,6 @@
 package com.pc.config.security;
 
-import com.pc.dao.MyUserDetails;
+import com.pc.model.MyUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;

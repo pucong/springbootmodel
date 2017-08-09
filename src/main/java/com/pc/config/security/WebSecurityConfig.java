@@ -1,15 +1,14 @@
 package com.pc.config.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
  * Created by PC on 2017/7/27.
@@ -32,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         //将登录成功后的用户服务放给自定义的类处理
         auth.userDetailsService(customUserService);
         //将登录验证过程交给自定义验证工具
-        auth.authenticationProvider(myAuthenticationProvider);
+//        auth.authenticationProvider(myAuthenticationProvider);
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -57,5 +56,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         //关闭csrf 防止循环定向
         http.csrf().disable();
         http.addFilterBefore(myFilterSecurityInterceptor, FilterSecurityInterceptor.class);
+//        http.addFilterBefore(new KaptchaAuthenticationFilter("/loginValid", "/login?error"), UsernamePasswordAuthenticationFilter.class);
     }
 }
